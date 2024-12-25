@@ -1,0 +1,550 @@
+[tabx-id]{
+}
+
+[tabx-type]{
+margin:10px 0;
+padding:0;
+}
+
+[tabx-type]::after, [tabx-type]::before, [tabx-id]::after, [tabx-id]::before{
+content:' ';
+display:block;
+clear:both;
+}
+
+[tabx-type] > li{
+list-style: none;
+cursor:pointer;
+display: block;
+  float: left;
+}
+
+[tabx-type="buttons"] > li{
+background-color:#ddd;
+border: 1px solid #999;
+padding: 5px 10px;
+margin: 5px;
+color:#999;
+border-radius:4px;
+}
+
+[tabx-type="tabs"]{
+border-bottom:1px solid #333;
+text-align:center;
+}
+
+[tabx-type="radios"]{
+padding:2px 0;
+}
+
+[tabx-type="radios"] > li{
+position:relative;
+line-height:25px;
+margin-right: 15px;
+}
+
+[tabx-type="radios"] > li::before{
+background-image: url(svg/radio-unchecked.svg);
+background-position: center left;
+background-size: 100%;
+background-repeat: no-repeat;
+content: ' ';
+display: block;
+width: 25px;
+height: 25px;
+margin-right: 2px;
+float: left;
+}
+
+[tabx-type="radios"] > li.tabx-li-active::before{
+background-image: url(svg/radio-checked.svg);
+}
+
+[tabx-type="radios"] > li > i{
+margin-top:5px;
+}
+
+[tabx-type="switches"]{
+text-align:center;
+padding:10px;
+}
+
+[tabx-type="switches"] > li{
+background:#fff;
+padding: 5px 10px;
+color:#999;
+border:1px solid #666;
+margin:5px -1px 5px 0;
+box-shadow: 8px 8px 8px #666;
+}
+
+[tabx-type="switches"] > li:first-child{
+border-top-left-radius: 20px;
+border-bottom-left-radius: 20px;
+}
+
+[tabx-type="switches"] > li:last-child{
+border-top-right-radius: 20px;
+border-bottom-right-radius: 20px;
+}
+
+[tabx-type="switches"] > li.tabx-li-active{
+background-color:#ddd;
+box-shadow:0 0 4px #333 inset;
+color:#333;
+}
+
+[tabx-type="pills"] > li{
+background-color:#ddd;
+border: 1px solid #999;
+border-radius:30px;
+padding: 5px 10px;
+margin: 5px;
+color:#999;
+}
+
+[tabx-type="tabs"] > li{
+background-color:#ddd;
+border: 1px solid #999;
+border-bottom: 0;
+padding: 5px 10px;
+margin: 0 5px;
+color:#999;
+border-top-right-radius:6px;
+border-top-left-radius:6px;
+}
+
+[tabx-type="tabs"] > li.tabx-li-active{
+position: relative;
+}
+
+[tabx-type="tabs"] > li.tabx-li-active::after {
+content: '';
+position: absolute;
+left: 0;
+right: 0;
+bottom: -1px;
+height: 1px;
+background: #fff;
+}
+
+[tabx-type] > li > i{
+display: block;
+float: right;
+color: #fff;
+background-color: gray;
+padding: 0 5px;
+margin-left: 5px;
+border-radius: 8px;
+font: bold 12px sans-serif;
+}
+
+[tabx-type="buttons"] > li:hover{
+border-color: #666;
+color:#666;
+background-color:#eee;
+}
+
+[tabx-type="buttons"] > li.tabx-li-active, [tabx-type="tabs"] > li.tabx-li-active, [tabx-type="pills"] > li.tabx-li-active{
+border-color: #333;
+color:#333;
+background-color:#fff;
+}
+
+[tabx-type] > li.tabx-li-active > i{
+background-color:#333;
+}
+
+.tabx-hide{
+display:none;
+}
+
+.tabx{
+position: relative;
+margin:8px;
+height:164px;
+width:276px;
+float: left;
+transition: all 0.2s;
+box-shadow: 0 0 0 #000;
+box-sizing: border-box;
+}
+
+
+.tabx-in{
+position:absolute;
+transform:rotateZ(0deg);
+transform-style: preserve-3d;
+z-index:1;
+top:0;
+left:0;
+right:0;
+bottom:0;
+transition: all 0.5s ease-in-out;
+opacity:1;
+perspective: 1000px;
+perspective-origin: 50% 50%;
+box-sizing:border-box;
+}
+
+
+.tabx-ui{
+display: block;
+float: left;
+height: 100%;
+width: 100%;
+position:relative;
+}
+
+.tabx-ui > a > img{
+border:0;
+display:block;
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.tabx-info{
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+background-color:rgba(0, 0, 0, 0.5);
+color:#fff;
+padding:5px;
+font:9px tahoma, verdana, sans-serif;
+display:none;
+z-index:2;
+}
+
+.tabx-title{font: bold 12px "Segoe UI",sans-serif;}
+
+.tabx:hover{
+transform:scale(1.6);
+z-index:3;
+}
+
+.tabx:hover .tabx-info{
+display:block;
+}
+
+
+/* fade animation */
+.tabx-fade-hide .tabx-in, .tabx-fade-show .tabx-in{
+opacity: 0.2;
+}
+
+.tabx-fade-show{
+background-color:rgba(205, 220, 57, 0.3);
+}
+
+.tabx-fade-hide{
+background-color:rgba(255, 87, 34, 0.3);
+}
+/* fade animation end */
+
+/* slide animation */
+.tabx-slide-hide .tabx-in{
+transform:translateX(1000px);
+opacity:0;
+}
+
+.tabx-slide-show .tabx-in{
+transform:translateX(-1000px);
+opacity:0;
+}
+/* slide animation end */
+
+/* fall animation */
+.tabx-fall-hide .tabx-in{
+transform:translateY(1000px);
+opacity:0;
+}
+
+.tabx-fall-show .tabx-in{
+transform:translateY(-1000px);
+opacity:0;
+}
+/* fall animation end */
+
+/* noir animation end */
+.tabx-noir-show .tabx-in{
+filter: grayscale(0.9);
+opacity: 0.6;
+}
+
+.tabx-noir-hide .tabx-in{
+filter: invert(99%);
+opacity: 0.9;
+}
+/* noir animation end */
+
+/* rotatez animation */
+.tabx-rotatez-hide .tabx-in {
+    transform: scale(1.5) rotateZ(45deg);
+    opacity: 0;
+}
+
+.tabx-rotatez-show .tabx-in {
+    transform: scale(0.5) rotateZ(-45deg);
+    opacity: 0;
+}
+/* rotatez animation end */
+
+/* rotatey animation */
+.tabx-rotatey-hide .tabx-in {
+transform: scale(0.5) rotateY(180deg) translateY(100px);
+opacity: 0;
+}
+
+.tabx-rotatey-show .tabx-in {
+transform: scale(1.5) rotateY(-180deg) translateY(100px);
+opacity: 0;
+}
+/* rotatey animation end */
+
+/* rotatex animation */
+.tabx-rotatex-hide .tabx-in {
+transform: scale(0.3) rotateX(180deg) translateY(-100px);
+opacity: 0;
+}
+
+.tabx-rotatex-show .tabx-in {
+transform: scale(1.3) rotateX(-180deg) translateY(-100px);
+opacity: 0;
+}
+/* rotatex animation end */
+
+/* none animation */
+.tabx-none-show .tabx-in, .tabx-none-hide .tabx-in{transition:all 0s;}
+/* none animation end */
+
+/* blur animation */
+.tabx-blur-show .tabx-in, .tabx-blur-hide .tabx-in{
+transform: scale(1.5);
+opacity: 0;
+filter: blur(8px);
+}
+/* blur animation end */
+
+
+/* away animation */
+.tabx-away-show .tabx-in, .tabx-away-hide .tabx-in{
+transform:scaleX(0.5) scaleY(0.5);
+opacity: 0;
+}
+/* away animation end */
+
+/* blast animation */
+.tabx-blast-hide:nth-of-type(4n-3) .tabx-in, .tabx-blast-show:nth-of-type(4n-3) .tabx-in {
+transform:translateX(-900px);
+}
+
+.tabx-blast-hide:nth-of-type(4n-2) .tabx-in, .tabx-blast-show:nth-of-type(4n-2) .tabx-in {
+transform:translateX(900px);
+}
+
+.tabx-blast-hide:nth-of-type(4n-1) .tabx-in, .tabx-blast-show:nth-of-type(4n-1) .tabx-in {
+transform:translateY(-900px);
+}
+
+.tabx-blast-hide:nth-of-type(4n) .tabx-in, .tabx-blast-show:nth-of-type(4n) .tabx-in {
+transform:translateY(900px);
+}
+
+.tabx-blast-show .tabx-in, .tabx-blast-hide .tabx-in{
+opacity: 0;
+}
+/* blast animation end */
+
+
+
+/* boxClasses */
+
+/* default class */
+.tabx-box-default{
+height: 165px;
+width: 292px;
+margin:0;
+background-color:#fff;
+}
+
+.tabx-box-default .tabx-in{
+background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(170,170,170,1) 100%); 
+}
+
+.tabx-box-default:hover{
+box-shadow: 0 0 5px #000;
+}
+/* default class end */
+
+/* photo class */
+.tabx-box-photo .tabx-in{
+border:7px solid #fff;
+box-shadow: 0 0 2px #000;
+background-color:#fff;
+}
+/* photo class end */
+
+
+/* glass class */
+.tabx-box-glass{
+height: 169px;
+width: 276px;
+}
+
+.tabx-box-glass .tabx-in{
+box-shadow: 0 0 2px #000;
+background-color:rgba(255, 255, 255, 0.5);
+padding:15px;
+}
+
+/* glass class end */
+
+/* plastic class */
+.tabx-box-plastic{
+height: 169px;
+width: 276px;
+}
+
+.tabx-box-plastic .tabx-in{
+box-shadow: 0 0 2px #000;
+background-color:rgba(255, 255, 255, 0.7);
+background-image:url(svg/stripes.svg);
+background-size:8px 8px;
+padding:15px;
+}
+
+/* plastic class end */
+
+/* frosty class */
+.tabx-box-frosty .tabx-in{
+box-shadow: 0 0 3px #000;
+border-radius:8px;
+background-image:repeating-linear-gradient(
+                135deg, 
+                rgba(255, 255, 255, 0.8), /* Semi-transparent white */
+                rgba(132, 251, 200, 0.6),
+                rgba(249, 255, 128, 0.4),
+                rgba(168, 168, 168, 0.6)
+            );
+padding:10px;
+}
+
+.tabx-box-frosty .tabx-ui{
+border-radius:4px;
+overflow:hidden;
+}
+/* frosty class end */
+
+
+/* candy class */
+.tabx-box-candy .tabx-in{
+    background-image: repeating-linear-gradient(
+        45deg,              /* Angle of the stripes */
+        #FFBFDF,              /* Start color */
+        #FFBFDF 10px,         /* End of black stripe */
+		#FF4AA5 10px,              /* Start color */
+        #FF4AA5 20px,         /* End of black stripe */
+        #97004B 20px,         /* Start of white stripe */
+        #97004B 30px          /* End of white stripe */
+    );
+padding:10px;
+box-shadow: 0 0 2px #000;
+}
+/* candy class end */
+
+
+/* double class */
+.tabx-box-double{
+height: 169px;
+width: 276px;
+}
+
+.tabx-box-double .tabx-in{
+box-shadow: 0 0 2px #000;
+background-color:rgba(0, 0, 0, 0.5);
+border:15px double #fff;
+}
+
+/* double class end */
+
+/* neon class */
+
+@property --bg-angle {
+inherits: false;
+initial-value: 0deg;
+syntax: "<angle>";
+}
+
+@keyframes spin {
+to {
+--bg-angle: 360deg;
+}
+}
+
+.tabx-box-neon{
+height: 169px;
+width: 276px;
+}
+
+.tabx-box-neon .tabx-in{
+animation:spin 2.5s infinite linear paused;
+background:linear-gradient(to bottom,oklch(0.1 0.2 240 / 0.95),oklch(0.1 0.2 240 / 0.95)) padding-box,conic-gradient(from var(--bg-angle) in oklch longer hue,oklch(0.85 0.37 0) 0 0) border-box;
+border:10px double #000;
+}
+
+.tabx-box-neon .tabx-in:hover{animation-play-state:running;}
+
+.tabx-box-neon .tabx-ui{background-color:rgba(255, 255, 255, 0.5);}
+/* neon class end */
+
+/* stamp class */
+.tabx-box-stamp{
+height: 169px;
+width: 276px;
+}
+
+.tabx-box-stamp .tabx-in{
+filter:drop-shadow(0 0 2px #000);
+
+padding:15px;
+
+  /* Change this value to adjust the stamp perforation size: */
+  --radius: 4px;
+
+  background-image: 
+    radial-gradient(
+      var(--radius),
+      transparent 98%,
+      white
+    ),
+    linear-gradient(white 0 0);
+  background-repeat: 
+    round, 
+    no-repeat;
+  background-position:
+    calc(var(--radius) * -1.5) calc(var(--radius) * -1.5),
+    50%;
+  background-size:
+    calc(var(--radius) * 3) calc(var(--radius) * 3),
+    calc(100% - var(--radius) * 3) calc(100% - var(--radius) * 3);
+}
+
+/* stamp class end */
+
+
+/* chequered class */
+.tabx-box-chequered{
+height: 169px;
+width: 276px;
+}
+
+.tabx-box-chequered .tabx-in{
+padding: 15px;
+box-shadow: 0 0 5px #000, 0 0 5px #000 inset;
+background-color: #fff;
+background-image: url(images/chequered.png);
+background-size: 100px;
+}
+/* chequered class end */

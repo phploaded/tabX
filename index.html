@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>tabX Developer Documentation</title>
+<link rel="stylesheet" href="tabx/tabx.css" />
+<link rel="stylesheet" href="demo.css" />
+<script src="jquery-3.7.1.min.js"></script>
+<script src="tabx/tabx.js"></script>
+<script src="demo.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/a11y-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+</head>
+<body class="body-">
+
+
+<div class="body-ctr">
+<div class="ctr">
+    <h1>Demo & Documentation for jQuery plugin tabX</h1>
+<p>The TabX plugin is a jQuery-based utility designed to create dynamic, category-based galleries with animations. It supports custom animations, category filtering, and various types of gallery navigation.</p>
+
+<h2>1. Live demo</h2>
+<p>To see the demo, select desired option and it will be applied automatically. Please note that instead of those images, simple text content can also be used.</p>
+
+<div>
+
+<div id="demo-apply" class="row">
+
+<div class="column25">
+<label for="type">Tab types :</label>
+<select onchange="demo_reapply()" id="type" name="type">
+<option value="buttons">buttons (Default value)</option>
+<option>pills</option>
+<option>tabs</option>
+<option>switches</option>
+<option>radios</option>
+</select>
+</div>
+
+<div class="column25">
+<label for="animation">Content animation :</label>
+<select onchange="demo_reapply()" id="animation" name="animation">
+<option value="none">none (Default value)</option>
+<option>fade</option>
+<option>slide</option>
+<option>fall</option>
+<option>noir</option>
+<option>rotatez</option>
+<option>rotatey</option>
+<option>rotatex</option>
+<option>blur</option>
+<option>away</option>
+<option>blast</option>
+<option>random</option>
+</select>
+</div>
+
+<div class="column25">
+<label for="boxClass">Content design :</label>
+<select onchange="demo_reapply()" id="boxClass" name="boxClass">
+<option value="default">default (Default value)</option>
+<option>photo</option>
+<option>glass</option>
+<option>plastic</option>
+<option>frosty</option>
+<option>candy</option>
+<option>double</option>
+<option>neon</option>
+<option>stamp</option>
+<option>chequered</option>
+</select>
+</div>
+
+<div class="column25">
+<label>&nbsp;</label>
+<label for="btn">&nbsp;</label>
+</div>
+
+</div>
+
+<div tabx-id="foolwa">
+<div tabx-cats="landscape">
+<p class="demo-blank-p">There is no other content in this box apart from this text! You can use any type of <b>html</b> content like <i>images, links, button, etc.</i></p>
+</div>
+
+<div class="my-demo-class" tabx-cats="landscape">
+<p class="demo-blank-p">This box also contains only text, however it has a custom class named <b>my-demo-class</b> applied to it which will help us set the background as gold color.</p>
+</div>
+
+<div tabx-cats="landscape">
+<a href="https://phploaded.com/github/full/674c0eda830d1.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/674c0eda830d1.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Golden Sunset</div>
+<div class="tabx-descr">An enchanting sunset casting golden hues over a serene lake.</div>
+</div>
+</div>
+
+<div tabx-cats="landscape">
+<a href="https://phploaded.com/github/full/674c0edc17b62.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/674c0edc17b62.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Forest Trail</div>
+<div class="tabx-descr">A peaceful path winding through lush green forests.</div>
+</div>
+</div>
+
+<div tabx-cats="animal,dog">
+<a href="https://phploaded.com/github/full/674c0edc96d9e.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/674c0edc96d9e.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Playful Puppy</div>
+<div class="tabx-descr">A lively puppy frolicking in a grassy meadow.</div>
+</div>
+</div>
+
+<div tabx-cats="animal,predator">
+<a href="https://phploaded.com/github/full/674c0ededcfa9.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/674c0ededcfa9.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Fierce Predator</div>
+<div class="tabx-descr">A powerful lion surveying its territory with pride.</div>
+</div>
+</div>
+
+<div tabx-cats="animal,dog">
+<a href="https://phploaded.com/github/full/674c0ee2b56cd.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/674c0ee2b56cd.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Loyal Companion</div>
+<div class="tabx-descr">A faithful dog sitting patiently under a tree.</div>
+</div>
+</div>
+
+<div tabx-cats="landscape">
+<a href="https://phploaded.com/github/full/674c0ee505f7c.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/674c0ee505f7c.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Rolling Hills</div>
+<div class="tabx-descr">Gentle hills blanketed in vibrant wildflowers.</div>
+</div>
+</div>
+
+<div tabx-cats="landscape">
+<a href="https://phploaded.com/github/full/674c0ee5abbb6.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/674c0ee5abbb6.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Rocky Coast</div>
+<div class="tabx-descr">Waves crashing against rugged coastal cliffs.</div>
+</div>
+</div>
+
+<div tabx-cats="flowers">
+<a href="https://phploaded.com/github/full/674c16119b42a.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/674c16119b42a.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Blooming Beauty</div>
+<div class="tabx-descr">A vibrant array of blooming flowers in a garden.</div>
+</div>
+</div>
+
+<div tabx-cats="flowers">
+<a href="https://phploaded.com/github/full/674dafff00c57.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/674dafff00c57.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Spring Blossom</div>
+<div class="tabx-descr">Cherry blossoms in full bloom under a sunny sky.</div>
+</div>
+</div>
+
+<div tabx-cats="flowers">
+<a href="https://phploaded.com/github/full/674db0015d364.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/674db0015d364.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Petal Perfection</div>
+<div class="tabx-descr">Close-up of a delicate rose covered in morning dew.</div>
+</div>
+</div>
+
+<div tabx-cats="animal,cat">
+<a href="https://phploaded.com/github/full/6751566189511.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/6751566189511.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Curious Kitten</div>
+<div class="tabx-descr">A curious kitten peeking out from behind a curtain.</div>
+</div>
+</div>
+
+<div tabx-cats="animal,cat">
+<a href="https://phploaded.com/github/full/67515662b53ea.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/67515662b53ea.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Playful Feline</div>
+<div class="tabx-descr">A playful cat chasing its tail in the living room.</div>
+</div>
+</div>
+
+<div tabx-cats="animal,cat">
+<a href="https://phploaded.com/github/full/675156633645f.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/675156633645f.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Relaxed Tabby</div>
+<div class="tabx-descr">A tabby cat lounging on a sunny windowsill.</div>
+</div>
+</div>
+
+<div tabx-cats="animal,cat">
+<a href="https://phploaded.com/github/full/67515664835b8.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/67515664835b8.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Majestic Feline</div>
+<div class="tabx-descr">A regal-looking cat perched on a wooden fence.</div>
+</div>
+</div>
+
+<div tabx-cats="birds">
+<a href="https://phploaded.com/github/full/675156c47b589.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/675156c47b589.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Colorful Parrot</div>
+<div class="tabx-descr">A brightly colored parrot perched on a branch.</div>
+</div>
+</div>
+
+<div tabx-cats="birds">
+<a href="https://phploaded.com/github/full/675156c51f3e0.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/675156c51f3e0.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Soaring Eagle</div>
+<div class="tabx-descr">An eagle gracefully soaring over a valley.</div>
+</div>
+</div>
+
+<div tabx-cats="birds">
+<a href="https://phploaded.com/github/full/675156c5e87bb.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/675156c5e87bb.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Gentle Dove</div>
+<div class="tabx-descr">A white dove resting on a windowsill.</div>
+</div>
+</div>
+
+<div tabx-cats="birds">
+<a href="https://phploaded.com/github/full/675156c65cd91.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/675156c65cd91.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Vibrant Kingfisher</div>
+<div class="tabx-descr">A kingfisher diving into a river for its catch.</div>
+</div>
+</div>
+
+<div tabx-cats="birds">
+<a href="https://phploaded.com/github/full/675156c77cc34.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/675156c77cc34.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Chirping Sparrow</div>
+<div class="tabx-descr">A tiny sparrow chirping on a tree branch.</div>
+</div>
+</div>
+
+<div tabx-cats="animal,predator">
+<a href="https://phploaded.com/github/full/67515739e7b58.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/67515739e7b58.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Silent Hunter</div>
+<div class="tabx-descr">A tiger stealthily moving through the jungle.</div>
+</div>
+</div>
+
+<div tabx-cats="animal,predator">
+<a href="https://phploaded.com/github/full/6751573b3fb8c.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/6751573b3fb8c.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Alpha Wolf</div>
+<div class="tabx-descr">A wolf howling under the full moon.</div>
+</div>
+</div>
+
+<div tabx-cats="flowers">
+<a href="https://phploaded.com/github/full/675193e7dac70.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/675193e7dac70.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Floral Symphony</div>
+<div class="tabx-descr">A field of colorful tulips swaying in the breeze.</div>
+</div>
+</div>
+
+<div tabx-cats="flowers">
+<a href="https://phploaded.com/github/full/675193e8e101f.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/675193e8e101f.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Golden Daffodils</div>
+<div class="tabx-descr">Daffodils shining brightly under the spring sun.</div>
+</div>
+</div>
+
+<div tabx-cats="landscape">
+<a href="https://phploaded.com/github/full/675193ea0e4fd.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/675193ea0e4fd.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Crystal Lake</div>
+<div class="tabx-descr">A pristine lake reflecting the surrounding mountains.</div>
+</div>
+</div>
+
+<div tabx-cats="fruit">
+<a href="https://phploaded.com/github/full/675193ead110c.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/675193ead110c.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Juicy Berries</div>
+<div class="tabx-descr">Freshly picked berries arranged in a basket.</div>
+</div>
+</div>
+
+<div tabx-cats="animal,cat">
+<a href="https://phploaded.com/github/full/675193eb93baa.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/675193eb93baa.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Whiskered Wanderer</div>
+<div class="tabx-descr">A cat exploring a garden at dusk.</div>
+</div>
+</div>
+
+<div tabx-cats="animal,cat">
+<a href="https://phploaded.com/github/full/675193ec6fdf9.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/675193ec6fdf9.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Midnight Prowler</div>
+<div class="tabx-descr">A black cat wandering through the shadows.</div>
+</div>
+</div>
+
+<div tabx-cats="landscape">
+<a href="https://phploaded.com/github/full/675193edd2d4f.jpg"><img class="tabx-img" src="https://phploaded.com/github/thumb/675193edd2d4f.jpg"></a>
+<div class="tabx-info">
+<div class="tabx-title">Desert Dunes</div>
+<div class="tabx-descr">Golden sand dunes stretching into the horizon.</div>
+</div>
+</div>
+
+</div>
+
+</div>
+    <h2>2. Installation</h2>
+    <p>Include the following files in your project:</p>
+    <pre><code class="language-html"><p>&lt;link rel=&quot;stylesheet&quot; href=&quot;tabx/tabx.css&quot;&gt;<br />
+&lt;script src=&quot;https://code.jquery.com/jquery-3.7.1.min.js&quot;&gt;&lt;/script&gt;<br />
+&lt;script src=&quot;tabx/tabx.js&quot;&gt;&lt;/script&gt;</p></code></pre>
+
+    <h2>3. Usage Instructions</h2>
+	
+	<p>Ensure your HTML includes elements with the following attributes:</p>
+
+<ul>
+	<li><b><code>tabx-id</code></b>: A unique identifier for the gallery.</li>
+	<li><b><code>tabx-cats</code></b>: Specifies the category of the item(s).</li>
+</ul>
+<p>Basic html structure looks like below : </p>
+<pre><code class="language-html"><p>&lt;div id=&quot;element&quot; tabx-id=&quot;some-unique-id-here&quot;&gt;<br />
+&nbsp;<br />
+&lt;!-- --- --- more html content --- --- --&gt;<br />
+&nbsp;<br />
+&lt;div tabx-cats=&quot;animal,cat&quot;&gt; You can put your HTML content here. &lt;/div&gt;<br />
+&lt;div tabx-cats=&quot;animal,dog&quot;&gt; You can put your HTML content here. &lt;/div&gt;<br />
+&lt;div tabx-cats=&quot;bird&quot;&gt; You can put your HTML content here. &lt;/div&gt;<br />
+&nbsp;<br />
+&lt;!-- --- --- more html content --- --- --&gt;<br />
+&nbsp;<br />
+&lt;/div&gt;</p></code></pre>
+<p><b>Important : </b><code>tabx-id</code> and <code>tabx-cats</code> properties must be defined. <code>tabx-id</code> acts as container and <code>tabx-cats</code> works as child. They must be alphanumeric and should not contain special charectors, spaces, etc. You can define them just like you would define a html class or id.</p>
+	
+<p>Just like any jQuery plugin, you can use it inside functions or events. The very basic example:</p>
+<pre><code class="language-js"><p>$(&#39;#element&#39;).tabX(); // for above example</p></code></pre>
+OR 
+<pre><code class="language-js"><p>$(&#39;[tabx-id=&quot;some-unique-id-here]&quot;&#39;).tabX(); // this also will work</p></code></pre>
+
+<p>For more customizable and optional features, you can refer this :</p>
+<pre><code class="language-js"><p>$(&#39;#element&#39;).tabX({<br />
+&nbsp;&nbsp;&nbsp; type: &#39;switches&#39;, // Tab design<br />
+&nbsp;&nbsp;&nbsp; animation: &#39;none&#39;, // animation to play when clicking a tab<br />
+&nbsp;&nbsp;&nbsp; boxClass: &#39;myclass&#39;, // Additional class for a particular slide customization<br />
+&nbsp;&nbsp;&nbsp; activeCat: &#39;all&#39;, // Default active category in tabbed menu<br />
+&nbsp;&nbsp;&nbsp; animations: [&quot;fade&quot;, &quot;slide&quot;] // array to choose from, when animation is random<br />
+});</p></code></pre>
+
+<h2>4. Advanced Examples</h2>
+
+<h3>Example 4.1 : Creating navigation tabs outside</h3>
+<p>By default tabbed navigation is created immediately inside the <b>tabx-id</b> container. If you want to create the navigation at some place else, you should manually specify the <b>tabx-gid</b> property which must have value same as <b>tabx-id</b>. We highly recomment using ul as container, however you may change that as well.</p>
+<pre><code class="language-html"><p>&lt;ul tabx-gid=&quot;some-unique-id-here&quot;&gt;&lt;/ul&gt;<br />
+&nbsp;<br />
+&lt;!-- --- --- more html content --- --- --&gt;<br />
+&nbsp;<br />
+&lt;div tabx-id=&quot;some-unique-id-here&quot;&gt;<br />
+&nbsp;<br />
+&lt;!-- --- --- more html content --- --- --&gt;<br />
+&nbsp;<br />
+&lt;/div&gt;</p></code></pre>
+<p>All categories will be auto analysed and clickable tabs will be created inside that container automatically.</p>
+
+<h3>Example 4.2 : Custom text or class on a particular category tab</h3>
+<p>All comma separated cats will generate a navigation item for its category automatically. If you want to modify the text or design for a fixed category item, you should define navigation container outside and then create items that need custom text or class inside it. example :</p>
+<pre><code class="language-html"><p>&lt;ul tabx-gid=&quot;some-unique-id-here&quot;&gt;<br />
+&lt;li class=&quot;your-custom-class&quot; tabx-cat-nav=&quot;predator&quot;&gt;Dangerous Animals&lt;/li&gt;<br />
+&lt;/ul&gt;<br />
+<br />
+&lt;!-- --- --- more html content --- --- --&gt;<br />
+<br />
+&lt;div tabx-id=&quot;some-unique-id-here&quot;&gt;</p>
+
+<p>&lt;!-- --- --- more html content --- --- --&gt;</p>
+
+<p>&lt;div tabx-cats=&quot;animal,cat&quot;&gt; You can put your HTML content here. &lt;/div&gt;<br />
+&lt;div tabx-cats=&quot;animal,dog&quot;&gt; You can put your HTML content here. &lt;/div&gt;<br />
+&lt;div tabx-cats=&quot;animal,predator&quot;&gt; You can put your HTML content here. &lt;/div&gt;</p>
+
+<p>&lt;!-- --- --- more html content --- --- --&gt;<br />
+<br />
+&lt;/div&gt;</p></code></pre>
+<p>The existing navigation item will be ignored and rest will be created automatically. Similarly, to edit all navigation item, you can :</p>
+<pre><code class="language-html"><p>&lt;li tabx-cat-nav=&quot;all&quot;&gt;Everything&lt;/li&gt;</p></code></pre>
+
+<h3>Example 4.3 : Other options for navigation container</h3>
+<p>Properties <b>tabx-type</b> and <b>tabx-anim</b> represent <b>type</b> and <b>animation</b> values respectively. Please remember, <b>Javascript have advantage over html property</b>. It means if you define these properties in html and via jquery option both, jquery option will be applied.</p>
+<pre><code class="language-html"><p>&lt;ul tabx-gid=&quot;some-unique-id-here&quot; tabx-type=&quot;radios&quot; tabx-anim=&quot;blast&quot;&gt;&lt;/ul&gt;</p></code></pre>
+
+<h3>Example 4.4 : Adding images and hover text</h3>
+<p>You can add these properties, just like regular html. We have predefined their classes, so you should use them. If you need you can add your own stuff too.</p>
+<pre><code class="language-html"><p>&lt;!-- --- --- for adding image only --- --- --&gt;<br />
+&lt;div tabx-cats=&quot;animal,cat&quot;&gt;<br />
+&lt;a href=&quot;https://phploaded.com/github/full/cat-67.jpg&quot;&gt;&lt;img class=&quot;tabx-img&quot; src=&quot;https://phploaded.com/github/thumb/cat-67.jpg&quot;&gt;&lt;/a&gt;<br />
+&lt;/div&gt;<br /></p> 
+<p><br />
+&lt;!-- --- --- image with hover title and description  --- --- --&gt;<br /> 
+&lt;div tabx-cats=&quot;flowers&quot;&gt;<br />
+&lt;a href=&quot;https://phploaded.com/github/full/674dafff00c57.jpg&quot;&gt;&lt;img class=&quot;tabx-img&quot; src=&quot;https://phploaded.com/github/thumb/674dafff00c57.jpg&quot;&gt;&lt;/a&gt;<br />
+&lt;div class=&quot;tabx-info&quot;&gt;<br />
+&lt;div class=&quot;tabx-title&quot;&gt;Spring Blossom&lt;/div&gt;<br />
+&lt;div class=&quot;tabx-descr&quot;&gt;Cherry blossoms in full bloom under a sunny sky.&lt;/div&gt;<br />
+&lt;/div&gt;<br />
+&lt;/div&gt;</p></code></pre>
+
+<h3>Example 4.5 : Adding your own animation(s)</h3>
+<p>All css animations are controlled by creating an animation name. Lets create animation named <b>twist</b>. When you use twist as value of animation property, a class named <b>tabx-twist-show</b> will be added to <b>tabx-cats</b> property container to boxes that are transitioning from hidden to shown. Similarly, a class named <b>tabx-twist-hide</b> will be added to elements that are going from visible to hidden. Based on these 2 classes, you can animate <b>tabx-in</b> child element. Example :</p>
+<pre><code class="language-css"><p>/* twist animation */<br />
+<br />
+.tabx-twist-hide .tabx-in {<br />
+transform: scale(0.3) rotateX(180deg) translateY(-100px);<br />
+opacity: 0;<br />
+}</p>
+
+<p>.tabx-twist-show .tabx-in {<br />
+transform: scale(1.3) rotateX(-180deg) translateY(-100px);<br />
+opacity: 0;<br />
+}<br />
+<br />
+/* twist animation end */</p></code></pre>
+<p>These animations will run for 500ms(0.5s) which cannot be changed because it is global for all animations. You can add these css codes and your new animation should play fine.</p>
+
+<h3>Example 4.6 : Adding your own boxClass(es)</h3>
+<p>Similar to example 4.5, all box designs are controlled by creating a boxClass name. Lets create design named <b>blood</b>. When you use blood as value of boxClass property, a class named <b>tabx-box-blood</b> will be added to <b>tabx-cats</b> property container. Final structure of html becomes like this :</p>
+<pre><code class="language-html"><p>&lt;div tabx-cats=&quot;landscape&quot; class=&quot;tabx tabx-box-blood&quot;&gt;<br />
+&lt;div class=&quot;tabx-in&quot;&gt;<br />
+&lt;div class=&quot;tabx-ui&quot;&gt;</p>
+
+<p>&lt;!-- --- --- more html content --- --- --&gt;</p>
+
+<p>&lt;/div&gt;<br />
+&lt;/div&gt;<br />
+&lt;/div&gt;</p>
+</code></pre>
+<p>The html elements <b>tabx-in</b> and <b>tabx-ui</b> are created automatically, so you dont have to add it. Based on this html markup, you can write your own css codes. Example :</p>
+<pre><code class="language-css"><p>/* blood class */</p>
+
+<p>.tabx-box-blood .tabx-in{<br />
+border:7px solid #f00;<br />
+box-shadow: 0 0 2px #000;<br />
+background-color:#fff;<br />
+}</p>
+
+<p>/* blood class end */</p></code></pre>
+<p>You should focus more on styling <b>tabx-in</b> and <b>tabx-ui</b> elements and not element <b>tabx-box-blood</b> itself.</p>
+
+<h3>Example 4.7 : Adding your own tab type(s)</h3>
+<p>Similar to example 4.5 and 4.6, all types are controlled by creating a type name. Lets create type named <b>tags</b>. When you use tags as value of type property, html property <b>tabx-type</b> will have value <b>tags</b> which is assigned to ul container with property <b>tabx-gid</b>. You can write css based on that. Example :</p>
+<pre><code class="language-css"><p>/* tags type */</p>
+
+<p>[tabx-type=&quot;tags&quot;]{<br />
+text-align:center;<br />
+padding:10px;<br />
+}</p>
+
+<p>[tabx-type=&quot;tags&quot;] &gt; li{<br />
+background:#fff;<br />
+border:1px solid #666;<br />
+}</p>
+
+<p>[tabx-type=&quot;tags&quot;] &gt; li.tabx-li-active{<br />
+color:#333;<br />
+}</p>
+
+<p>/* tags type end */</p></code></pre>
+
+<h2>5. Configuration Options</h2>
+<table class="tbl">
+	<thead>
+		<tr>
+			<th>Option</th>
+			<th>Type</th>
+			<th>Values</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>type</code></td>
+			<td><code>string</code></td>
+			<td>Default : <code>&#39;buttons&#39;</code><br>Available options : <i>buttons, pills, tabs, switches, radios</i></td>
+			<td>Tab design</td>
+		</tr>
+		<tr>
+			<td><code>animation</code></td>
+			<td><code>string</code></td>
+			<td>Default : <code>&#39;none&#39;</code><br>Available options : <i>none, fade, slide, fall, noir, rotatez, rotatey, rotatex, blur, away, blast, <span style="color:red;">random</span></i></td>
+			<td>Animation to play when clicking a tab. If set to <span style="color:red;">random</span>, every time a random animation will be used from animations array.</td>
+		</tr>
+		<tr>
+			<td><code>boxClass</code></td>
+			<td><code>string</code></td>
+			<td>Default : <code>&#39;default&#39;</code><br>Available options : <i>default, photo, glass, plastic, frosty, candy, double, neon, stamp, chequered</i></td>
+			<td>Additional class for a particular slide customization</td>
+		</tr>
+		<tr>
+			<td><code>activeCat</code></td>
+			<td><code>string</code></td>
+			<td>Default : <code>&#39;all&#39;</code></td>
+			<td>Default category to display on initialization.</td>
+		</tr>
+		<tr>
+			<td><code>animations</code></td>
+			<td><code>array</code></td>
+			<td>Default : [&quot;fade&quot;, &quot;slide&quot;, &quot;fall&quot;, &quot;noir&quot;, &quot;rotatez&quot;, &quot;rotatey&quot;, &quot;rotatex&quot;, &quot;blur&quot;, &quot;away&quot;, &quot;blast&quot;]</td>
+			<td>Available animation styles for <span style="color:red;">random</span> animation option.</td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+<p>You have reached the end of tabx documentation page. If you have more questions you can reach me via <a target="_blank" href="https://phploaded.com/contact/">phploaded's contact page</a>. No gurantees but i will try to look into it as soon as possible.</p>
+
+	
+<div class="text-center">A product of <a href="http://phploaded.com">phploaded.com</a></div>
+</div>
+</div>
+</div>
+</body>
+</html>
