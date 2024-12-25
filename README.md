@@ -1,6 +1,9 @@
 # tabX - Interactive Gallery Plugin for jQuery
 
-**tabX** is a lightweight and powerful jQuery plugin that creates dynamic, filterable galleries with smooth animations. Whether you're building a portfolio, an e-commerce store, or a photo gallery, tabX enhances your website's interactivity and visual appeal.  
+**tabX** is a lightweight and powerful jQuery plugin that creates dynamic, filterable galleries with smooth animations. Whether you're building a portfolio, an e-commerce store, or a photo gallery, tabX enhances your website's interactivity and visual appeal.
+
+Check out detailed usage examples and a live demo on the **tabX Documentation Page**:  
+👉 [tabX Documentation & Demo](https://phploaded.github.io/tabX/)  
 
 ---
 
